@@ -13,7 +13,7 @@ if (typeof(Storage) !== "undefined") {
         return veiculos[uuid];
     }
 
-    function armazenar(veiculo, uuid) {
+    function armazenar(veiculo, uuid /* opcional */) {
         if (typeof veiculo !== "object" || !veiculo.modelo || !veiculo.marca || !veiculo.ano || !veiculo.preco || !veiculo.descricao || !veiculo.cor)
                 throw("Preencha todos os dados do veículo.");
 
