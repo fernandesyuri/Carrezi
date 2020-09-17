@@ -1,4 +1,50 @@
 #header-div {
     height: 200px;
     background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/fundo1920.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+@media only screen and (max-width: 960px) and (min-width: 721px) {
+    #header-div {
+        background-image: url("../img/fundo960.png");
+    }
+}
+
+@media only screen and (max-width: 720px) and (min-width: 541px) {
+    #header-div {
+        background-image: url("../img/fundo720.png");
+    }
+
+    #header-div img {
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    #header-div {
+        background-image: url("../img/fundo540.png");
+    }
+
+    #header-div img {
+        height: 80px;
+    }
+}
+
+​ #home-card-header {
+    font-size: 24px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-top: 1px solid gray;
+    background-color: white;
 }
