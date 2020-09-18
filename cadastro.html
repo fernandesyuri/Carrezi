@@ -30,14 +30,14 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="listagem.html">Listagem</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="cadastro.html">Cadastro</a>
+                                <a class="nav-link active" href="cadastro.html">Cadastro <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="sobre.html">Sobre</a>
@@ -48,7 +48,7 @@
             </div>
         </div>
         <br>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate onsubmit="event.preventDefault(); salvarVeiculo();">
 
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -56,14 +56,15 @@
                     <label for="inputMarca">Marca:</label>
                     <select id="inputMarca" class="custom-select" required>
                         <option value="" selected>--Selecionar--</option>
-                        <option value="chevrolet">Chevrolet</option>
-                        <option value="volkswagen">Volkswagen</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="renault">Renault</option>
-                        <option value="ford">Ford</option>
-                        <option value="toyota">Toyota</option>
-                        <option value="hyundai">Hyundai</option>
-                        <option value="jeep">Jeep</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Fiat">Fiat</option>
+                        <option value="Renault">Renault</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Hyundai">Hyundai</option>
+                        <option value="Jeep">Jeep</option>
+                        <option value="Porsche">Porsche</option>
                     </select>
                     <div class="invalid-feedback alert alert-danger">
                         Marca é obrigatório
@@ -89,31 +90,36 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label>Preço:</label>
-                    <input type="number" min="1" max="100000000" class="form-control numeroApenas" id="inputPreco"
-                        placeholder="Insira o Preço do modelo" required>
-                    <div class="invalid-feedback alert alert-danger">
-                        Preço inválido
-                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">R$</span>
+                        </div>
+                        <input type="number" min="1" max="100000000" class="form-control" id="inputPreco"
+                            placeholder="Insira o Preço do modelo" required aria-label="Username" aria-describedby="basic-addon1">
+                        <div class="invalid-feedback alert alert-danger">
+                            Preço inválido
+                        </div>
+                      </div>    
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Foto:</label>
-                    <input type="text" class="form-control" id="inputPreco" placeholder="Insira o nome da foto">
+                    <input type="text" class="form-control" id="inputFoto" placeholder="Insira o nome da foto">
                 </div>
                 <div class="form-group col-md-6">
                     <label>Cor:</label>
-                    <select id="inputMarca" class="form-control" placeholder="Insira o nome da foto" required>
+                    <select id="inputCor" class="form-control" placeholder="Insira o nome da foto" required>
                         <option value="" selected>--Selecionar--</option>
-                        <option value="ciza">Ciza</option>
-                        <option value="azuk">Azuk</option>
-                        <option value="preto">Preto</option>
-                        <option value="amarelo">Amarelo</option>
-                        <option value="vermelho">Vermelho</option>
-                        <option value="branco">Branco</option>
-                        <option value="rosa">Rosa</option>
-                        <option value="prata">Prata</option>
-                        <option value="verde">Verde</option>
+                        <option value="Cinza">Cinza</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Preto">Preto</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Vermelho">Vermelho</option>
+                        <option value="Branco">Branco</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Prata">Prata</option>
+                        <option value="Verde">Verde</option>
                     </select>
                     <div class="invalid-feedback alert alert-danger">
                         Cor é obrigatório
@@ -122,8 +128,8 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-12">
-                    <label for="exampleFormControlTextarea1">Descrição:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    <label for="inputDescricao">Descrição:</label>
+                    <textarea class="form-control" id="inputDescricao" rows="3"
                         placeholder="Insira a descrição do veiculo" required></textarea>
                     <div class="invalid-feedback alert alert-danger">
                         Descrição é obrigatório
@@ -153,8 +159,8 @@
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/vanilla-masker.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/cadastro.js"></script>
- 
 </body>
 
 </html>

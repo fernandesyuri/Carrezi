@@ -1,0 +1,20 @@
+#titleRow {
+    background-color: rgb(238, 238, 238);
+    height: 50px;
+    font-size: 24px;
+    border-bottom: 1px solid rgb(175, 175, 175);
+}
+
+.carImage {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center center;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.modeloVeiculo {
+    font-size: 36px;
+}
